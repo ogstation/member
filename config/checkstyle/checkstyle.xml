@@ -54,6 +54,16 @@ page at http://checkstyle.sourceforge.net/config.html -->
         <property name="message" value='All TODOs should be named.  e.g. "TODO(johndoe): Refactor when v2 is released."' />
     </module>
 
+    <module name="NewlineAtEndOfFile"/>
+
+    <!-- Checks that property files contain the same keys. -->
+    <module name="Translation"/>
+
+    <!-- Maximum file length check-->
+    <module name="FileLength">
+        <property name="max" value="200"/>
+    </module>
+
     <!-- All Java AST specific tests live under TreeWalker module. -->
     <module name="TreeWalker">
 
@@ -202,6 +212,18 @@ page at http://checkstyle.sourceforge.net/config.html -->
         LENGTH and CODING CHECKS
 
         -->
+
+        <!-- Maximum method length check -->
+        <module name="MethodLength">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="max" value="25"/>
+        </module>
+
+        <!-- Maximum method parameter length check-->
+        <module name="ParameterNumber">
+            <property name="max" value="3"/>
+            <property name="tokens" value="METHOD_DEF"/>
+        </module>
 
         <module name="LineLength">
             <!-- Checks if a line is too long. -->
