@@ -1,3 +1,5 @@
+package com.github.ogstation;
+
 public class App
 {
     private boolean junit;

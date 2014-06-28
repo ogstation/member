@@ -1,3 +1,6 @@
+package com.github.ogstation;
+
+import com.github.ogstation.App;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
