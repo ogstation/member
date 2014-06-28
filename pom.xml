@@ -62,7 +62,6 @@
                         <configuration>
                             <encoding>UTF-8</encoding>
                             <failsOnError>true</failsOnError>
-                            <linkXRef>false</linkXRef>
                         </configuration>
                         <goals>
                             <goal>check</goal>
@@ -76,14 +75,17 @@
                 <version>${cobertura-plugin.version}</version>
                 <configuration>
                     <check>
+                        <haltOnFailure>true</haltOnFailure>
                         <branchRate>80</branchRate>
                         <lineRate>80</lineRate>
-                        <haltOnFailure>true</haltOnFailure>
                         <totalBranchRate>80</totalBranchRate>
                         <totalLineRate>80</totalLineRate>
                         <packageLineRate>80</packageLineRate>
                         <packageBranchRate>80</packageBranchRate>
                     </check>
+                    <formats>
+                        <format>html</format>
+                    </formats>
                     <instrumentation>
                         <excludes>
                             <exclude>com/github/ogstation/**/domain/*.class</exclude>
@@ -92,6 +94,7 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <phase>package</phase>
                         <goals>
                             <goal>clean</goal>
                             <goal>check</goal>
