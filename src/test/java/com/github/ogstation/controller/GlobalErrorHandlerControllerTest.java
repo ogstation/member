@@ -1,5 +1,6 @@
 package com.github.ogstation.controller;
 
+import com.github.ogstation.config.MessageResolver;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -7,8 +8,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Properties;
-
+import static com.github.ogstation.helper.MessageCodes.GLOBAL_ERROR_400;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -19,9 +19,10 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 public class GlobalErrorHandlerControllerTest
 {
 
-    @Mock
-    private Properties errorMessage;
     private MockMvc mockMvc;
+
+    @Mock
+    private MessageResolver messageResolver;
 
     @InjectMocks
     private GlobalErrorHandlerController globalErrorHandlerController;
@@ -30,7 +31,7 @@ public class GlobalErrorHandlerControllerTest
     public void setUp() throws Exception
     {
         MockitoAnnotations.initMocks(this);
-        when(errorMessage.getProperty("global.error.400")).thenReturn("api not found");
+        when(messageResolver.getMessage(GLOBAL_ERROR_400)).thenReturn("api not found");
         this.mockMvc = standaloneSetup(globalErrorHandlerController).build();
     }
 

@@ -148,7 +148,7 @@
         <module name="ImportOrder">
             <!-- Checks for out of order import statements. -->
             <property name="severity" value="warning"/>
-            <property name="groups" value="java,javax,org,net,com"/>
+            <property name="groups" value="com,org,net,java,javax"/>
             <!-- This ensures that static imports go first. -->
             <property name="option" value="top"/>
             <property name="tokens" value="STATIC_IMPORT, IMPORT"/>
