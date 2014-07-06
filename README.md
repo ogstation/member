@@ -15,5 +15,8 @@ mvn jetty:run
  
 API
 ======
-* 400: /api/error/400
-* 500: /api/error/500
+* /api/error/400: handle 400 error
+* /api/error/500: handle 500 error
+
+* /api/integral(POST): add integral
+* /api/integral(GET): retrieve integral
