@@ -87,6 +87,17 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-classic.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
 
 
         <!-- Test Dependencies-->
@@ -140,7 +151,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
@@ -222,6 +232,12 @@
                     <webAppConfig>
                         <contextPath>/</contextPath>
                     </webAppConfig>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>catalina.base</name>
+                            <value>${basedir}/target</value>
+                        </systemProperty>
+                    </systemProperties>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
                             <port>9090</port>
@@ -240,8 +256,11 @@
 
         <jackson.version>2.4.1</jackson.version>
         <servlet-api.version>2.5</servlet-api.version>
+        <logback-classic.version>1.1.2</logback-classic.version>
+        <slf4j-api.version>1.7.7</slf4j-api.version>
 
         <java.version>1.6</java.version>
+
         <junit.version>4.11</junit.version>
         <hamcrest.version>1.3</hamcrest.version>
         <mockito.version>1.9.5</mockito.version>
@@ -250,9 +269,9 @@
         <checkstyle-plugin.version>2.12.1</checkstyle-plugin.version>
         <source-pluign.version>2.2.1</source-pluign.version>
         <javadoc-plugin.version>2.9.1</javadoc-plugin.version>
+        <maven-war-plugin.version>2.4</maven-war-plugin.version>
 
         <checkstyle.config.location>config/checkstyle/checkstyle.xml</checkstyle.config.location>
-        <maven-war-plugin.version>2.4</maven-war-plugin.version>
     </properties>
 
 </project>

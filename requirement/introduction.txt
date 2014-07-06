@@ -48,3 +48,25 @@
 
 会员等级：
 累计积分   等级    特权等级(行星) 
+
+=======================
+customer:
+open_id
+identity_card
+realname
+avatar
+email
+telephone
+sex
+nickname
+language
+city_code
+province_code
+country_code
+regtime
+birthday
+homepage
+instroduction
+company
+
+

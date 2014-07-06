@@ -7,7 +7,7 @@ Og station member
 
 How to build ?
 ======
-mvn clean install -Pci
+mvn clean install
 
 How to run ?
 ======
