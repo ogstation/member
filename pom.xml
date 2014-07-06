@@ -202,6 +202,7 @@
         <profile>
             <id>ci</id>
             <build>
+                <finalName>member</finalName>
                 <plugins>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
@@ -239,6 +240,14 @@
                             </execution>
                         </executions>
                     </plugin>
+                    <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>${maven-war-plugin.version}</version>
+                        <configuration>
+                            <outputDirectory>webapps</outputDirectory>
+                            <warName>ROOT</warName>
+                        </configuration>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
@@ -259,6 +268,7 @@
         <javadoc-plugin.version>2.9.1</javadoc-plugin.version>
 
         <checkstyle.config.location>config/checkstyle/checkstyle.xml</checkstyle.config.location>
+        <maven-war-plugin.version>2.4</maven-war-plugin.version>
     </properties>
 
 </project>
