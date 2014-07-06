@@ -45,6 +45,33 @@ public class GlobalErrorHandlerControllerTest
     }
 
     @Test
+    public void should_be_able_to_handle_401_error() throws Exception
+    {
+        // then
+        this.mockMvc.perform(post("/api/error/401"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("errorCode").value("401"));
+    }
+
+    @Test
+    public void should_be_able_to_handle_403_error() throws Exception
+    {
+        // then
+        this.mockMvc.perform(post("/api/error/403"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("errorCode").value("403"));
+    }
+
+    @Test
+    public void should_be_able_to_handle_404_error() throws Exception
+    {
+        // then
+        this.mockMvc.perform(post("/api/error/404"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("errorCode").value("404"));
+    }
+
+    @Test
     public void should_be_able_to_handle_500_error() throws Exception
     {
         // then
