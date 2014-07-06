@@ -68,5 +68,6 @@ birthday
 homepage
 instroduction
 company
+education
 
 
