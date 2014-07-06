@@ -244,7 +244,7 @@
                         <artifactId>maven-war-plugin</artifactId>
                         <version>${maven-war-plugin.version}</version>
                         <configuration>
-                            <outputDirectory>webapps</outputDirectory>
+                            <outputDirectory>deployments</outputDirectory>
                             <warName>ROOT</warName>
                         </configuration>
                     </plugin>
