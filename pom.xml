@@ -196,6 +196,14 @@
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
+                <configuration>
+                    <outputDirectory>webapps</outputDirectory>
+                    <warName>ROOT</warName>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <profiles>
@@ -239,14 +247,6 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <version>${maven-war-plugin.version}</version>
-                        <configuration>
-                            <outputDirectory>webapps</outputDirectory>
-                            <warName>ROOT</warName>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>
