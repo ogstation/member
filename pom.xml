@@ -244,7 +244,7 @@
                         <artifactId>maven-war-plugin</artifactId>
                         <version>${maven-war-plugin.version}</version>
                         <configuration>
-                            <outputDirectory>deployments</outputDirectory>
+                            <outputDirectory>webapps</outputDirectory>
                             <warName>ROOT</warName>
                         </configuration>
                     </plugin>
@@ -254,6 +254,8 @@
     </profiles>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <jackson.version>2.4.1</jackson.version>
         <servlet-api.version>2.5</servlet-api.version>
 
