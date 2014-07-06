@@ -15,5 +15,5 @@ mvn jetty:run
  
 API
 ======
-400: /api/error/400
-500: /api/error/500
+* 400: /api/error/400
+* 500: /api/error/500
