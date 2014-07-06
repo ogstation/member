@@ -9,12 +9,3 @@ script:
 notifications:
   email:
   - wenhao@126.com
-deploy:
-  provider: openshift
-  user: wenhao@126.com
-  password:
-    secure: RJhxvGLQqa3nLptCeQg8s1JErjiuZLNvl2l6VZZqkE/sMcaQOatml8Lo13Ll+VI+2VM+6lhtz9ktPUs7OleLcLary3l3MwHXAYQjNxbxPELI2qye80ifjSMdPllb7YMwflyN8rGbvu6zjLSsMTYiwQDFBhh8adDHVAuekeUXlZE=
-  app: member
-  domain: cloudbuild
-  on:
-    repo: ogstation/member
