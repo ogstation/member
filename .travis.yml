@@ -13,7 +13,7 @@ deploy:
   provider: openshift
   user: "wenhao@126.com"
   password: "1qaz!QAZ"
-  domain: member-cloudbuild.rhcloud.com
+  domain: cloudbuild
   app: member
   on: master
 
