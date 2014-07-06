@@ -9,6 +9,13 @@ install: true
 script:
   - mvn clean install -Pci
 
+deploy:
+  provider: openshift
+  user: "wenhao@126.com"
+  password: "1qaz!QAZ"
+  app: member
+  on: master
+
 notifications:
   email:
     - wenhao@126.com
