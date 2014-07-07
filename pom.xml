@@ -208,7 +208,6 @@
         <spring-framework.version>1.0.0.RELEASE</spring-framework.version>
         <servlet-api.version>2.5</servlet-api.version>
 
-
         <json-path.version>0.9.1</json-path.version>
 
         <cobertura-plugin.version>2.5.2</cobertura-plugin.version>
