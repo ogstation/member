@@ -73,6 +73,12 @@
             <version>${json-path.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path-assert</artifactId>
+            <version>${json-path.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -197,12 +203,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.6</java.version>
 
         <spring-framework.version>1.0.0.RELEASE</spring-framework.version>
-        <jackson.version>2.4.1</jackson.version>
         <servlet-api.version>2.5</servlet-api.version>
 
-        <java.version>1.6</java.version>
 
         <json-path.version>0.9.1</json-path.version>
 

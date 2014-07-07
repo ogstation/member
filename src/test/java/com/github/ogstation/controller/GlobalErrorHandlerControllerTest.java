@@ -9,6 +9,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static com.github.ogstation.helper.MessageCodes.GLOBAL_ERROR_400;
+import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -41,7 +42,7 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(post("/api/error/400"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("errorCode").value("400"));
+                .andExpect(jsonPath("errorCode", is("400")));
     }
 
     @Test
@@ -50,7 +51,7 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(post("/api/error/401"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("errorCode").value("401"));
+                .andExpect(jsonPath("errorCode", is("401")));
     }
 
     @Test
@@ -59,7 +60,7 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(post("/api/error/403"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("errorCode").value("403"));
+                .andExpect(jsonPath("errorCode", is("403")));
     }
 
     @Test
@@ -68,7 +69,7 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(post("/api/error/404"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("errorCode").value("404"));
+                .andExpect(jsonPath("errorCode", is("404")));
     }
 
     @Test
@@ -77,6 +78,6 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(get("/api/error/500"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("errorCode").value("500"));
+                .andExpect(jsonPath("errorCode", is("500")));
     }
 }
