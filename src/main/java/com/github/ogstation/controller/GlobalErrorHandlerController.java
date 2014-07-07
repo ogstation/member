@@ -2,6 +2,8 @@ package com.github.ogstation.controller;
 
 import com.github.ogstation.config.MessageResolver;
 import com.github.ogstation.domain.RestError;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,11 +18,12 @@ import static com.github.ogstation.helper.MessageCodes.GLOBAL_ERROR_500;
 @RequestMapping("/api/error")
 public class GlobalErrorHandlerController
 {
-    private static final String NOT_FOUND = "404";
-    private static final String INTERNAL_ERROR = "500";
+    private static final Logger LOGGER = LoggerFactory.getLogger(GlobalErrorHandlerController.class);
     private static final String BAD_REQUEST = "400";
     private static final String UNAUTHORIZED = "401";
     private static final String FORBIDDEN = "403";
+    private static final String NOT_FOUND = "404";
+    private static final String INTERNAL_ERROR = "500";
 
     @Autowired
     private MessageResolver messageResolver;
@@ -52,6 +55,7 @@ public class GlobalErrorHandlerController
     @RequestMapping("/500")
     public RestError handle500Error()
     {
+        LOGGER.debug("500 internal error");
         return new RestError(INTERNAL_ERROR, messageResolver.getMessage(GLOBAL_ERROR_500));
     }
 }

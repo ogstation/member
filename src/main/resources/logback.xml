@@ -4,10 +4,12 @@
     <property name="LOGGER_HOME" value="${catalina.base}/logs"/>
     <property name="LOGGER_NAME" value="member" />
     <property name="ROOT_LEVEL" value="debug" />
+    <property name="ENCODER_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n" />
+    <property name="MAX_FILE_ZIE" value="50MB" />
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <pattern>${ENCODER_PATTERN}</pattern>
         </encoder>
     </appender>
 
@@ -20,14 +22,13 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOGGER_HOME}/${LOGGER_NAME}_info.log.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
+            <FileNamePattern>${LOGGER_HOME}/${LOGGER_NAME}_info_%d{yyyy-MM-dd}.log%i.gz</FileNamePattern>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <pattern>${ENCODER_PATTERN}</pattern>
         </encoder>
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <MaxFileSize>10MB</MaxFileSize>
+            <MaxFileSize>${MAX_FILE_ZIE}</MaxFileSize>
         </triggeringPolicy>
     </appender>
 
@@ -40,14 +41,13 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOGGER_HOME}/${LOGGER_NAME}_debug.log.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
+            <FileNamePattern>${LOGGER_HOME}/${LOGGER_NAME}_debug_%d{yyyy-MM-dd}.log%i.gz</FileNamePattern>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <pattern>${ENCODER_PATTERN}</pattern>
         </encoder>
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <MaxFileSize>10MB</MaxFileSize>
+            <MaxFileSize>${MAX_FILE_ZIE}</MaxFileSize>
         </triggeringPolicy>
     </appender>
 
@@ -60,23 +60,19 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOGGER_HOME}/${LOGGER_NAME}_error.log.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
+            <FileNamePattern>${LOGGER_HOME}/${LOGGER_NAME}_error_%d{yyyy-MM-dd}.log%i.gz</FileNamePattern>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+            <pattern>${ENCODER_PATTERN}</pattern>
         </encoder>
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <MaxFileSize>10MB</MaxFileSize>
+            <MaxFileSize>${MAX_FILE_ZIE}</MaxFileSize>
         </triggeringPolicy>
     </appender>
 
-    <!-- logger for spring boot -->
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <logger name="org.springframework.web" level="DEBUG"/>
 
     <root level="${ROOT_LEVEL}">
-        <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE_INFO" />
         <appender-ref ref="FILE_DEBUG" />
         <appender-ref ref="FILE_ERROR" />
