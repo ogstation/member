@@ -22,4 +22,5 @@ API
 * /api/error/500: handle 500 error
 
 * /api/integral(POST): add integral
+  * data: {"customerId": "XXX", "amount": "XXXX"， "gasStationId": "XXXX"}
 * /api/integral(GET): retrieve integral
