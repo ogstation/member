@@ -32,7 +32,6 @@ public class GlobalErrorHandlerControllerTest
     public void setUp() throws Exception
     {
         MockitoAnnotations.initMocks(this);
-        when(messageResolver.getMessage(GLOBAL_ERROR_400)).thenReturn("api not found");
         this.mockMvc = standaloneSetup(globalErrorHandlerController).build();
     }
 

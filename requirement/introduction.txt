@@ -51,23 +51,36 @@
 
 =======================
 customer:
-open_id
-identity_card
-realname
-avatar
-email
-telephone
-sex
-nickname
-language
-city_code
-province_code
-country_code
-regtime
-birthday
-homepage
-instroduction
-company
-education
+
+open_id 会员卡号
+identity_card 身份证
+telephone 手机号
+age 年龄
+phone 电话
+email 邮箱
+realname 真实姓名
+nickname 昵称
+englishName
+gender 性别
+birthday 出身日期
+
+avatar 头像
+language 语言
+
+city_code 市
+province_code 省
+country_code 县/区
+nation_code 国家
+address_detail 详细地址
+
+occupation 职业
+graduate_School 毕业学校
+zodiac 生肖
+constellation 星座
+
+regtime 注册时间
+homepage 主页
+company 公司名称
+instroduction 自我介绍
 
 
