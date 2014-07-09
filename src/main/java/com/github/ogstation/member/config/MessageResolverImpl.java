@@ -1,4 +1,4 @@
-package com.github.ogstation.config;
+package com.github.ogstation.member.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

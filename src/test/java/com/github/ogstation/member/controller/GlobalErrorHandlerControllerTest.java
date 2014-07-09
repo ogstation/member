@@ -1,6 +1,6 @@
-package com.github.ogstation.controller;
+package com.github.ogstation.member.controller;
 
-import com.github.ogstation.config.MessageResolver;
+import com.github.ogstation.member.config.MessageResolver;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -8,9 +8,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static com.github.ogstation.helper.MessageCodes.GLOBAL_ERROR_400;
 import static org.hamcrest.Matchers.is;
-import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;

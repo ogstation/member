@@ -1,4 +1,4 @@
-package com.github.ogstation.config;
+package com.github.ogstation.member.config;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,8 +9,8 @@ import org.springframework.context.MessageSource;
 
 import java.util.Locale;
 
-import static com.github.ogstation.helper.MessageCodes.GLOBAL_ERROR_400;
-import static com.github.ogstation.helper.MessageCodes.GLOBAL_ERROR_500;
+import static com.github.ogstation.member.helper.MessageCodes.GLOBAL_ERROR_400;
+import static com.github.ogstation.member.helper.MessageCodes.GLOBAL_ERROR_500;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;

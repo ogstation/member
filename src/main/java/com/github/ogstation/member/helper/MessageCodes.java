@@ -1,4 +1,4 @@
-package com.github.ogstation.helper;
+package com.github.ogstation.member.helper;
 
 public final class MessageCodes
 {

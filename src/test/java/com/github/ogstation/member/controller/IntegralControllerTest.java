@@ -1,4 +1,4 @@
-package com.github.ogstation.controller;
+package com.github.ogstation.member.controller;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.github.ogstation.config;
+package com.github.ogstation.member.config;
 
 public interface MessageResolver
 {

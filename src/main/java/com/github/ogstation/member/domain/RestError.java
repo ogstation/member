@@ -1,4 +1,4 @@
-package com.github.ogstation.domain;
+package com.github.ogstation.member.domain;
 
 public class RestError
 {

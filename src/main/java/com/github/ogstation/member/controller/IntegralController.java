@@ -1,4 +1,4 @@
-package com.github.ogstation.controller;
+package com.github.ogstation.member.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
