@@ -13,7 +13,7 @@ import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
-@RequestMapping("api/member")
+@RequestMapping("/api/member")
 public class MemberController
 {
     @Autowired

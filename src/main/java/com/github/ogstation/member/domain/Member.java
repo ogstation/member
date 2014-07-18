@@ -1,7 +1,5 @@
 package com.github.ogstation.member.domain;
 
-import org.joda.time.DateTime;
-
 public class Member
 {
     private String id;
@@ -14,7 +12,7 @@ public class Member
     private String nickName;
     private String email;
     private String englishName;
-    private DateTime birthday;
+    private String birthday;
     private String zodiac;
     private String constellation;
     private String graduateSchool;
@@ -179,12 +177,12 @@ public class Member
         this.englishName = englishName;
     }
 
-    public DateTime getBirthday()
+    public String getBirthday()
     {
         return birthday;
     }
 
-    public void setBirthday(DateTime birthday)
+    public void setBirthday(String birthday)
     {
         this.birthday = birthday;
     }

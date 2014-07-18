@@ -39,7 +39,7 @@
                 id = #{id}
             </if>
             <if test="identityCard != null">
-                AND identityCard = #{identityCard}
+                AND identity_card = #{identityCard}
             </if>
             <if test="telephone != null">
                 AND telephone = #{telephone}
