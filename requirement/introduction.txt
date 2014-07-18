@@ -81,6 +81,6 @@ constellation 星座
 regtime 注册时间
 homepage 主页
 company 公司名称
-instroduction 自我介绍
+introduction 自我介绍
 
 

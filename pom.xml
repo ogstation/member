@@ -55,6 +55,11 @@
             <artifactId>guava</artifactId>
         </dependency>
         <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>${servlet-api.version}</version>
@@ -82,11 +87,16 @@
     </dependencies>
 
     <build>
+        <finalName>member</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>${checkstyle-plugin.version}</version>
+                <configuration>
+                    <configLocation>${checkstyle.location}</configLocation>
+                    <suppressionsLocation>${checkstyle.suppressionsLocation}</suppressionsLocation>
+                </configuration>
                 <executions>
                     <execution>
                         <id>validate</id>
@@ -209,6 +219,7 @@
         <servlet-api.version>2.5</servlet-api.version>
 
         <json-path.version>0.9.1</json-path.version>
+        <joda-time.version>2.3</joda-time.version>
 
         <cobertura-plugin.version>2.5.2</cobertura-plugin.version>
         <checkstyle-plugin.version>2.12.1</checkstyle-plugin.version>
@@ -216,7 +227,8 @@
         <javadoc-plugin.version>2.9.1</javadoc-plugin.version>
         <maven-war-plugin.version>2.4</maven-war-plugin.version>
 
-        <checkstyle.config.location>config/checkstyle/checkstyle.xml</checkstyle.config.location>
+        <checkstyle.location>config/checkstyle/checkstyle.xml</checkstyle.location>
+        <checkstyle.suppressionsLocation>config/checkstyle/checkstyle-suppressions.xml</checkstyle.suppressionsLocation>
     </properties>
 
 </project>
