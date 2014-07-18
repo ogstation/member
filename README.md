@@ -21,4 +21,4 @@ API
 * /api/error/404: handle 404 error
 * /api/error/500: handle 500 error
 
-* /api/member()
+* /api/member/search(POST): search gas station by gas station
