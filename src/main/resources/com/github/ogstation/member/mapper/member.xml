@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.github.ogstation.member.domain.Member">
+    <resultMap id="MemberResultMap" type="Member">
+        <id property="id" column="id" />
+        <result property="identityCard" column="identity_card" />
+        <result property="telephone" column="telephone" />
+        <result property="phone" column="phone" />
+        <result property="realName" column="real_name" />
+        <result property="age" column="age" />
+        <result property="gender" column="gender" />
+        <result property="nickName" column="nick_name" />
+        <result property="email" column="email" />
+        <result property="englishName" column="english_name" />
+        <result property="birthday" column="birthday" />
+        <result property="zodiac" column="zodiac" />
+        <result property="constellation" column="constellation" />
+        <result property="graduateSchool" column="graduateSchool" />
+        <result property="language" column="language" />
+        <result property="occupation" column="occupation" />
+        <result property="homepage" column="homepage" />
+        <result property="company" column="company" />
+        <result property="introduction" column="introduction" />
+        <result property="nationCode" column="nation_code" />
+        <result property="provinceCode" column="province_code" />
+        <result property="cityCode" column="city_code" />
+        <result property="countryCode" column="country_code" />
+        <result property="addressDetails" column="address_details" />
+    </resultMap>
+
+    <select id="searchMember" parameterType="Member" resultMap="MemberResultMap">
+        SELECT *
+        FROM member
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="identityCard != null">
+                AND identityCard = #{identityCard}
+            </if>
+            <if test="telephone != null">
+                AND telephone = #{telephone}
+            </if>
+            <if test="email != null">
+                AND email = #{email}
+            </if>
+        </where>
+    </select>
+
+</mapper>
