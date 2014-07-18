@@ -11,7 +11,7 @@ public class Member
     private String realName;
     private Integer age;
     private String gender;
-    private String nickname;
+    private String nickName;
     private String email;
     private String englishName;
     private DateTime birthday;
@@ -149,14 +149,14 @@ public class Member
         this.gender = gender;
     }
 
-    public String getNickname()
+    public String getNickName()
     {
-        return nickname;
+        return nickName;
     }
 
-    public void setNickname(String nickname)
+    public void setNickName(String nickName)
     {
-        this.nickname = nickname;
+        this.nickName = nickName;
     }
 
     public String getEmail()

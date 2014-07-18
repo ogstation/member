@@ -59,7 +59,7 @@ age 年龄
 phone 电话
 email 邮箱
 realname 真实姓名
-nickname 昵称
+nickName 昵称
 englishName
 gender 性别
 birthday 出身日期
