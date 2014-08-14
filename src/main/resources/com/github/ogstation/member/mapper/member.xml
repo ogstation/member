@@ -5,7 +5,7 @@
 
 <mapper namespace="com.github.ogstation.member.domain.Member">
     <resultMap id="MemberResultMap" type="Member">
-        <id property="id" column="id" />
+        <id property="memberId" column="member_id" />
         <result property="identityCard" column="identity_card" />
         <result property="telephone" column="telephone" />
         <result property="phone" column="phone" />
@@ -35,8 +35,8 @@
         SELECT *
         FROM member
         <where>
-            <if test="id != null">
-                id = #{id}
+            <if test="memberId != null">
+                member_id = #{memberId}
             </if>
             <if test="identityCard != null">
                 AND identity_card = #{identityCard}

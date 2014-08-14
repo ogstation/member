@@ -26,7 +26,7 @@
 DROP TABLE IF EXISTS `member`;
 
 CREATE TABLE `member` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `identity_card` varchar(255) DEFAULT NULL,
   `telephone` varchar(11) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE `member` (
   `city_code` varchar(255) DEFAULT NULL,
   `country_code` varchar(255) DEFAULT NULL,
   `address_details` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`member_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 

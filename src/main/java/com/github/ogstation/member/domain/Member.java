@@ -1,8 +1,10 @@
 package com.github.ogstation.member.domain;
 
-public class Member
+import org.springframework.hateoas.ResourceSupport;
+
+public class Member extends ResourceSupport
 {
-    private String id;
+    private String memberId;
     private String identityCard;
     private String telephone;
     private String phone;
@@ -77,14 +79,14 @@ public class Member
         this.addressDetail = addressDetail;
     }
 
-    public String getId()
+    public String getMemberId()
     {
-        return id;
+        return memberId;
     }
 
-    public void setId(String id)
+    public void setMemberId(String memberId)
     {
-        this.id = id;
+        this.memberId = memberId;
     }
 
     public String getIdentityCard()
