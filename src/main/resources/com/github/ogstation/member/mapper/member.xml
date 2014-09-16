@@ -50,4 +50,61 @@
         </where>
     </select>
 
+    <insert id="insertMember" parameterType="Member" useGeneratedKeys="true" keyProperty="memberId">
+        INSERT INTO member (member_id, identity_card, telephone, phone, real_name, age, gender, nick_name, email, english_name, birthday, zodiac, constellation, graduateSchool, language, occupation, homepage, company, introduction, nation_code, province_code, city_code, country_code, address_details)
+        VALUES (#{memberId}, #{identityCard}, #{telephone}, #{phone}, #{realName}, #{age}, #{gender}, #{nickName}, #{email}, #{englishName}, #{birthday}, #{zodiac}, #{constellation}, #{graduateSchool}, #{language}, #{occupation}, #{homepage}, #{company}, #{introduction}, #{nationCode}, #{provinceCode}, #{cityCode}, #{countryCode}, #{addressDetails});
+    </insert>
+
+    <select id="getAllMembers" resultMap="memberResultMap">
+        SELECT *
+        FROM member
+    </select>
+
+    <select id="getMemberById" parameterType="String" resultMap="memberResultMap">
+        SELECT *
+        FROM member
+        WHERE member_id = #{memberId};
+    </select>
+
+    <select id="getMembersByPageable" parameterType="Pageable" resultMap="memberResultMap">
+        SELECT *
+        FROM member
+        LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+    <update id="updateMember" parameterType="Member">
+        UPDATE member
+        SET
+        identity_card = #{identityCard},
+        telephone = #{telephone},
+        phone = #{phone},
+        real_name = #{realName},
+        age = #{age},
+        gender = #{gender},
+        nick_name = #{nickName},
+        email = #{email},
+        english_name = #{englishName},
+        birthday = #{birthday},
+        zodiac = #{zodiac},
+        constellation = #{constellation},
+        graduateSchool = #{graduateSchool},
+        language = #{language},
+        occupation = #{occupation},
+        homepage = #{homepage},
+        company = #{company},
+        introduction = {introduction},
+        nation_code = #{nationCode},
+        province_code = #{provinceCode},
+        city_code = #{cityCode},
+        country_code = #{countryCode},
+        address_details = #{addressDetails}
+        WHERE member_id = #{memberId};
+    </update>
+
+    <delete id="deleteMember" parameterType="String">
+        DELETE
+        FROM member
+        WHERE member_id = #{memberId};
+    </delete>
+
 </mapper>

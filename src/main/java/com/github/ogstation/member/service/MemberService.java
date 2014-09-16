@@ -1,18 +1,21 @@
 package com.github.ogstation.member.service;
 
-import com.github.ogstation.member.dao.MemberDao;
 import com.github.ogstation.member.domain.Member;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Pageable;
 
-@Service
-public class MemberService
+import java.util.List;
+
+public interface MemberService
 {
-    @Autowired
-    private MemberDao memberDao;
+    Member search(Member member);
 
-    public Member search(Member member)
-    {
-        return memberDao.search(member);
-    }
+    List<Member> get(Pageable pageable);
+
+    Member get(String id);
+
+    Member create(Member member);
+
+    Member update(Member member);
+
+    Member delete(String id);
 }

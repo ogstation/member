@@ -5,6 +5,7 @@
 <configuration>
 
     <typeAliases>
+        <typeAlias alias="Pageable" type="org.springframework.data.domain.Pageable" />
         <typeAlias alias="Member" type="com.github.ogstation.member.domain.Member" />
     </typeAliases>
 
