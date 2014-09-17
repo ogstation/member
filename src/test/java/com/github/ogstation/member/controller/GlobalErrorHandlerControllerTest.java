@@ -39,7 +39,7 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(post("/api/error/400"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.errorCode", is("400")));
+                .andExpect(jsonPath("$.status", is("400")));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(post("/api/error/401"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.errorCode", is("401")));
+                .andExpect(jsonPath("$.status", is("401")));
     }
 
     @Test
@@ -57,7 +57,7 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(post("/api/error/403"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.errorCode", is("403")));
+                .andExpect(jsonPath("$.status", is("403")));
     }
 
     @Test
@@ -66,7 +66,7 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(post("/api/error/404"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.errorCode", is("404")));
+                .andExpect(jsonPath("$.status", is("404")));
     }
 
     @Test
@@ -75,6 +75,6 @@ public class GlobalErrorHandlerControllerTest
         // then
         this.mockMvc.perform(get("/api/error/500"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.errorCode", is("500")));
+                .andExpect(jsonPath("$.status", is("500")));
     }
 }

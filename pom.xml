@@ -194,8 +194,8 @@
                     </formats>
                     <instrumentation>
                         <excludes>
-                            <exclude>com/github/ogstation/member/domain/*.class</exclude>
-                            <exclude>com/github/ogstation/member/helper/*.class</exclude>
+                            <exclude>com/github/ogstation/member/domain/**/*.class</exclude>
+                            <exclude>com/github/ogstation/member/helper/**/*.class</exclude>
                         </excludes>
                     </instrumentation>
                 </configuration>

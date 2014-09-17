@@ -208,6 +208,7 @@ public class MemberControllerTest
         member.setNickName("nickName");
         member.setProvinceCode("provinceCode");
         member.setRealName("realName");
+        member.setTelephone("10000000000");
         return member;
     }
 }

@@ -1,11 +1,13 @@
 package com.github.ogstation.member.domain;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.hateoas.ResourceSupport;
 
 public class Member extends ResourceSupport
 {
     private String memberId;
     private String identityCard;
+    @NotBlank
     private String telephone;
     private String phone;
     private String realName;
